@@ -1,22 +1,25 @@
 {
-  "name": "CHANGE THIS : Extension boilerplate",
-  "version": "0.0.1",
+  "name": "Color Picker",
+  "version": "1",
   "manifest_version": 2,
-  "description": "This extension was created with the awesome extensionizr.com",
+  "description": "Just a color picker",
   "homepage_url": "http://extensionizr.com",
   "icons": {
-    "16": "icons/icon16.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+    "128": "icons/art-and-design.png"
   },
+  "browser_action": {},
   "default_locale": "en",
   "background": {
     "scripts": [
+      "js/jquery.min.js",
       "src/bg/background.js"
-    ],
-    "persistent": false
+    ]
   },
+  "web_accessible_resources": [
+    "src/content/inject.css",
+    "icons/art-and-design.png"
+  ],
   "permissions": [
-    "geolocation"
+    "activeTab"
   ]
 }

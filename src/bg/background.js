@@ -6,8 +6,43 @@
 
 
 //example of using a message handler from the inject scripts
-chrome.extension.onMessage.addListener(
-  function(request, sender, sendResponse) {
-  	chrome.pageAction.show(sender.tab.id);
-    sendResponse();
-  });
+chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+	if(request.type == 'reInit')
+		init(sender.tab);
+	// sendResponse();
+	return true;
+});
+
+
+function get_screenshot(cb) {
+        try {
+            chrome.tabs.captureVisibleTab(null, {
+                format: 'png'
+            }, function(data) {
+                if (chrome.runtime.lastError) {
+                    return cb(false);
+                }
+                cb({type: "image_data", data: data });
+            })
+        } catch (e) {
+            chrome.tabs.captureVisibleTab(null, function(data) {
+                if (chrome.runtime.lastError) {
+                    return cb(false);
+                }
+                cb({type: "image_data", data: data });
+            })
+        }
+    }
+
+
+function init(tab){
+	chrome.tabs.executeScript(tab.id, {
+        file: "/src/content/inject.js"
+    }, function() {
+		get_screenshot((e)=>{
+			if(e) chrome.tabs.sendMessage(tab.id, e);
+		})
+    })
+}
+
+chrome.browserAction.onClicked.addListener(init);
