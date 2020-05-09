@@ -2,8 +2,7 @@
   "name": "Color Picker",
   "version": "1",
   "manifest_version": 2,
-  "description": "Just a color picker",
-  "homepage_url": "http://extensionizr.com",
+  "description": "Quickly pick colors from page with lightweight eyedropper tool",
   "icons": {
     "128": "icons/art-and-design.png"
   },

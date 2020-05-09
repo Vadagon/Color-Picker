@@ -1,0 +1,21 @@
+	Color Picker
+	Quickly pick colors from page with lightweight eyedropper tool
+
+	
+Features:
+🚀 Single-click to start color picking
+🚀 Chrome DevTools like Color Picker
+🚀 Colors selecting History
+🚀 Copy colors in RGB or HEX format
+🚀 Zoom
+
+If you looking for: 
+⭐️ ColorPicker
+⭐️ EyeDropper
+⭐️ Photoshop Color Picker for Chrome
+⭐️ The best tool for web designer
+⭐️ 100% Free ColorPicker
+⭐️ Most used color from web page palette
+
+
+Note: extension doesn’t pick colors on system pages and in chrome web store due to security restrictions.
