@@ -45,6 +45,7 @@ function firstInit(){
 	window.suppperI = true;
 	loadJquery()
 	injectCSS()
+	escCatch()
 	start();
 	chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 
@@ -87,6 +88,14 @@ function stop(){
 	$(document).off('mousemove.colorPicker').off('click.colorPicker').off('scroll.colorPicker').off('resize.colorPicker')
 }
 
+function escCatch(){
+	$(document).on('keydown', function(event) {
+		console.log(event);
+		if (event.key == "Escape" || event.which === 27) {
+           stop();
+       }
+	});
+}
 function mouseCatch(ctx){
 	$(document).on('mousemove.colorPicker', function(e) {
 		if(!a.ctx) return;

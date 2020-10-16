@@ -13,6 +13,9 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	return true;
 });
 
+chrome.browserAction.onClicked.addListener(function(tab) {
+    init(tab);
+});
 
 function get_screenshot(cb) {
         try {

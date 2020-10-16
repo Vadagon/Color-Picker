@@ -1,6 +1,6 @@
 {
   "name": "Color Picker",
-  "version": "1",
+  "version": "2",
   "manifest_version": 2,
   "description": "Quickly pick colors from page with lightweight eyedropper tool",
   "icons": {
@@ -20,5 +20,13 @@
   ],
   "permissions": [
     "activeTab"
-  ]
+  ],
+  "commands": {
+    "_execute_browser_action": {
+        "suggested_key": {
+            "windows": "Alt+Shift+C",
+            "mac": "Alt+Shift+C"
+        }
+    }
+  }
 }
