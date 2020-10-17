@@ -1,7 +1,8 @@
 	Color Picker
 	Quickly pick colors from page with lightweight eyedropper tool
 
-	
+❗ Shortcut: Shift + Alt + C	
+
 Features:
 🚀 Single-click to start color picking
 🚀 Chrome DevTools like Color Picker

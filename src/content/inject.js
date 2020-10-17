@@ -56,11 +56,14 @@ function firstInit(){
 
 		a.image = new Image();
 		a.image.onload = function() {
-			a.canvas.width = a.image.width;
-			a.canvas.height = a.image.height;
-		  	a.ctx.drawImage(a.image, 0, 0);
+			a.canvas.width = window.innerWidth;
+			a.canvas.height = window.innerHeight;
+		  	a.ctx.drawImage(a.image, 0, 0, a.image.width, a.image.height, 0, 0, a.canvas.width, a.canvas.height);
 
 		  	// console.log(ctx.getImageData(215, 215, 1, 1).data)
+			// $('<img>').appendTo('body').attr('src', a.ctx.getImageData(0, 0,  a.canvas.width, a.canvas.height).data);
+
+		  	
 		};
 		a.image.src = request.data;
 
@@ -111,7 +114,7 @@ function mouseCatch(ctx){
 			}
 			rgba.push(e)
 		})
-	}).mouseover();
+	})
 	$(document).on('click.colorPicker', function(event){
 		if($(event.target).closest('#colorPickerUI').length || $(event.target).hasClass('colorPickerUIommit')) return;
 
