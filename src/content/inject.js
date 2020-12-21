@@ -133,7 +133,7 @@ function mouseCatch(ctx){
 				<div class="fardoscolorRGBCode">${selectedColor.toUpperCase()}</div>			
 				<br style="clear:both">
 			</li>			
-		`).appendTo('#fardosInjectColorsList ul')
+		`).prependTo('#fardosInjectColorsList ul')
 		.on('click', '.fardoscolorHexCode', copyColor)
 		.on('click', '.fardoscolorRGBCode', copyColor)
 		.on('click', '.fardoscolorBoxRemoveColor', function(){
@@ -166,8 +166,8 @@ function buildUI(){
 				<ul>			
 				</ul>	
 			</div>	
-			<!-- <a class="bottomBttnsSaveColorsF">Create an account to save</a> -->
-			<!-- <p class="bottomFardosInjectStatus">Click escape to exit</p>	 -->
+			<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate Me ☆☆☆</a>
+			<p class="bottomFardosInjectStatus">Click escape to exit</p>	
 		</div>`).appendTo('body').find('#stopAllButtonFardosInject').on('click', stop)
 		
 		$( "#colorPickerUI" ).draggable();

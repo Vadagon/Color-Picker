@@ -268,6 +268,7 @@ body[enableColorCursor]{
     user-select: none !important;
     cursor: pointer !important;
     z-index: 9999999999 !important;
+    padding-bottom: 22px;
 }
 #colorPickerUI.rightSideFardosPickerM .closeButtns {
     width: 35px !important;
@@ -377,10 +378,11 @@ body[enableColorCursor]{
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    padding: 10px !important;
+    padding: 5px 10px !important;
     display: inline-block !important;
     text-align: center !important;
-    background: #ff225b !important;
+    background: #64db94 !important;
+    background: linear-gradient(-45deg, rgb(237, 118, 94), rgb(254, 168, 88)) !important;
     font-size: 10px !important;
     text-transform: uppercase !important;
     letter-spacing: 1px !important;
