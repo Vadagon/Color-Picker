@@ -1,6 +1,6 @@
 {
   "name": "Color Picker",
-  "version": "3",
+  "version": "4",
   "manifest_version": 2,
   "description": "Quickly pick colors from page with lightweight eyedropper tool",
   "icons": {
