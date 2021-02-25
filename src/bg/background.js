@@ -20,8 +20,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 function get_screenshot(cb) {
         try {
             chrome.tabs.captureVisibleTab(null, {
-                "format": "jpeg",
-                "quality": 100,
+                "format": "png"
             }, function(data) {
                 if (chrome.runtime.lastError) {
                     return cb(false);

@@ -151,6 +151,8 @@ function mouseCatch(ctx){
 }
 
 function buildUI(){
+	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate Me ☆☆☆</a>`
+	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
 	$(`
 		<div class="rightSideFardosPickerM" id="colorPickerUI">
 			<div class="fardosPickerHeader">	
@@ -166,7 +168,7 @@ function buildUI(){
 				<ul>			
 				</ul>	
 			</div>	
-			<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate Me ☆☆☆</a>
+			${(Math.random()<0.8)?advertise1:advertise2}
 			<p class="bottomFardosInjectStatus">Click escape to exit</p>	
 		</div>`).appendTo('body').find('#stopAllButtonFardosInject').on('click', stop)
 		

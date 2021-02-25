@@ -396,6 +396,9 @@ body[enableColorCursor]{
     border-bottom-left-radius: 10px !important;
     border-bottom-right-radius: 10px !important;
 }
+#colorPickerUI .bottomBttnsSaveColorsF.alternateAddvertise{
+    background: linear-gradient(-45deg, rgb(0 184 255), rgb(110 0 255)) !important;
+}
 .bottomBttnsSaveColorsF.settogo {
     background: #1bd138 !important;
 }
