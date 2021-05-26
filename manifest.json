@@ -1,8 +1,8 @@
 {
-  "name": "Color Picker",
-  "version": "5",
+  "name": "Ultimate Color Picker",
+  "version": "6",
   "manifest_version": 2,
-  "description": "Quickly pick colors from page with lightweight eyedropper tool",
+  "description": "Quickly select colors from a page with lightweight eyedropper tool",
   "icons": {
     "128": "icons/art-and-design.png"
   },
