@@ -168,11 +168,14 @@ function buildUI(){
 				<ul>			
 				</ul>	
 			</div>	
-			${(Math.random()<0.8)?advertise1:advertise2}
+			${advertise1}
 			<p class="bottomFardosInjectStatus">Click escape to exit</p>	
 		</div>`).appendTo('body').find('#stopAllButtonFardosInject').on('click', stop)
 		
 		$( "#colorPickerUI" ).draggable();
+
+			// ${(Math.random()<0.8)?advertise1:advertise2}
+
 }
 
 
