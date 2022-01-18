@@ -151,7 +151,7 @@ function mouseCatch(ctx){
 }
 
 function buildUI(){
-	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate Me ☆☆☆</a>`
+	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
 	$(`
 		<div class="rightSideFardosPickerM" id="colorPickerUI">
@@ -229,6 +229,8 @@ function rgb2hex(rgb) {
 }
 
 function copyToClipboard(str){
+  chrome.extension.sendMessage({type: 'copy', text: str});
+  return;
   const el = document.createElement('textarea');
   el.value = str;
   document.body.appendChild(el);

@@ -9,6 +9,8 @@
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	if(request.type == 'reInit')
 		init(sender.tab);
+    if(request.type == 'copy')
+        copyTextToClipboard(request.text)
 	// sendResponse();
 	return true;
 });
@@ -46,6 +48,16 @@ function init(tab){
 			if(e) chrome.tabs.sendMessage(tab.id, e);
 		})
     })
+}
+
+function copyTextToClipboard(text) {
+  var copyFrom = document.createElement("textarea");
+  copyFrom.textContent = text;
+  document.body.appendChild(copyFrom);
+  copyFrom.select();
+  document.execCommand('copy');
+  copyFrom.blur();
+  document.body.removeChild(copyFrom);
 }
 
 chrome.browserAction.onClicked.addListener(init);
