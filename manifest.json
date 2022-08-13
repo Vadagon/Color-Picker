@@ -2,27 +2,29 @@
   "name": "__MSG_app_name__",
   "description": "__MSG_app_description__",
   "default_locale": "en",
-  "version": "9",
-  "manifest_version": 2,
+  "version": "13",
+  "manifest_version": 3,
   "icons": {
     "128": "icons/art-and-design.png"
   },
-  "browser_action": {},
+  "action": {},
   "background": {
-    "scripts": [
-      "js/jquery.min.js",
-      "src/bg/background.js"
-    ]
+    "service_worker": "src/bg/background.js"
   },
-  "web_accessible_resources": [
-    "src/content/inject.css",
-    "icons/art-and-design.png"
-  ],
+  "web_accessible_resources": [{
+    "resources": [
+      "src/content/inject.css",
+      "icons/art-and-design.png"
+    ],
+    "matches": ["<all_urls>"]
+  }],
   "permissions": [
-    "activeTab"
+    "activeTab",
+    "scripting",
+    "storage"
   ],
   "commands": {
-    "_execute_browser_action": {
+    "_execute_action": {
         "suggested_key": {
             "windows": "Alt+Shift+C",
             "mac": "Alt+Shift+C"

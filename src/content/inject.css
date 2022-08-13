@@ -1,38 +1,30 @@
-body[enableColorCursor] *{
-	cursor: crosshair !important;
-	pointer-events: none !important;
-}
-body[enableColorCursor]{
-	cursor: crosshair !important;
+body[enableColorCursor] * {
+    cursor: crosshair !important;
+    pointer-events: none !important;
 }
 
-.color-sampler-preview {
+body[enableColorCursor] {
+    cursor: crosshair !important;
+}
+
+.color-bodier-preview {
     z-index: 2147483647 !important;
-    left: 110px;
-    top: 1765px;
-    /*border: 10px solid rgb(52, 56, 129);*/
-
-
-
-
+    left: -110px;
+    top: -110px;
     position: absolute !important;
-    box-shadow: rgb(74, 74, 74) 0px 0px 0px 1px;
+    box-shadow: rgb(74, 74, 74) 0px 0px 0px 1px !important;
     z-index: 100 !important;
     width: 120px !important;
     height: 120px !important;
     background-color: white !important;
     pointer-events: none !important;
     box-sizing: border-box !important;
-    /*border-width: 10px;*/
-    /*border-style: solid;*/
-    /*border-color: lightgrey;*/
-    /*border-image: initial;*/
     border-radius: 50% !important;
     overflow: hidden !important;
 }
 
 
-.color-sampler-preview::before {
+.color-bodier-preview::before {
     content: " " !important;
     position: absolute !important;
     top: 50% !important;
@@ -47,17 +39,13 @@ body[enableColorCursor]{
     border-style: solid !important;
     border-color: red !important;
     border-image: initial !important;
-    /*border-radius: 30px !important;*/
     overflow: hidden !important;
 }
 
-.color-sampler-preview input {
-    background: rgb(99, 101, 210);
-    color: rgb(0, 0, 0);
-
-
-
-    color: white;
+.color-bodier-preview input {
+    background: rgb(99, 101, 210) !important;
+    color: rgb(0, 0, 0) !important;
+    color: white !important;
     position: absolute !important;
     bottom: 0px !important;
     left: 0px !important;
@@ -72,10 +60,6 @@ body[enableColorCursor]{
     letter-spacing: 2px !important;
     box-shadow: none !important;
     background: white;
-    /*border-width: initial !important;*/
-    /*border-style: none !important;*/
-    /*border-color: initial !important;*/
-    /*border-image: initial !important;*/
     border-radius: 0px !important;
     margin: 0px !important;
     padding: 0px !important;
@@ -83,71 +67,36 @@ body[enableColorCursor]{
 }
 
 
-.color-sampler-preview table {
+.color-bodier-preview table {
     box-sizing: border-box !important;
     border-spacing: 0px !important;
     /*margin: 0px !important;*/
     margin: -1px !important;
 }
-.color-sampler-preview table, .color-sampler-preview td, .color-sampler-preview th{
+
+.color-bodier-preview table,
+.color-bodier-preview td,
+.color-bodier-preview th {
     border-collapse: collapse !important;
     border: 1px solid #a7a7a7;
 
 }
-.color-sampler-preview tr {
+
+.color-bodier-preview tr {
     border-width: initial !important;
     border-style: none !important;
     border-color: initial !important;
     border-image: initial !important;
 }
-.color-sampler-preview td {
 
+.color-bodier-preview td {
     height: 11px !important;
     width: 11px !important;
-    /*border-width: initial !important;*/
-    /*border-style: none !important;*/
-    /*border-color: initial !important;*/
-    /*border-image: initial !important;*/
     padding: 0px !important;
-    /*border: 0.5px inset #00000038 !important;*/
     box-sizing: border-box;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#fardosInjectEyeDropp {
+#VerblikeInjectEyeDropp {
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -157,322 +106,217 @@ body[enableColorCursor]{
     box-sizing: border-box !important;
     display: block !important;
 }
-#colorPickerUI, #colorPickerUI *{
-	cursor: auto !important;
-	pointer-events: auto !important;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#ultimatePickerUI,
+#ultimatePickerUI * {
+    cursor: auto !important;
+    pointer-events: auto !important;
 }
-.fardosInjectEyeDropp canvas {
+
+.VerblikeInjectEyeDropp canvas {
     margin: 0 !important;
     padding: 0 !important;
     box-sizing: border-box !important;
     display: block !important;
 }
-/*.color-sampler-preview {
-    position: absolute !important;
-    z-index: 99999999999 !important;
-    box-shadow: 0 0 1px 1px rgba(34, 45, 57, 0.3) !important;
-    z-index: 100 !important;
-    width: 200px !important;
-    height: 200px !important;
-    border: 10px solid lightgrey;
-    border-radius: 50% !important;
-    background-color: white !important;
-    pointer-events: none !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
-.color-sampler-preview.active {
-    display: block !important;
-}
-.color-sampler-preview table {
-    border-spacing: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-}
-.color-sampler-preview tr {
-    border: none !important;
-}
-.color-sampler-preview td {
-    height: 6px !important;
-    width: 6px !important;
-    border: none !important;
-    padding: 0 !important;
-}
-.color-sampler-preview td[x="7"][y="7"] {
-    border: 1px solid transparent !important;
-}
-.color-sampler-preview td[x="7"][y="6"] {
-    border-bottom: 1px solid transparent !important;
-}
-.color-sampler-preview td[x="7"][y="8"] {
-    border-top: 1px solid transparent !important;
-}
-.color-sampler-preview td[x="6"][y="7"] {
-    border-right: 1px solid transparent !important;
-}
-.color-sampler-preview td[x="8"][y="7"] {
-    border-left: 1px solid transparent !important;
-}
-.color-sampler-preview::before {
-    content: " " !important;
-    position: absolute !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 10px !important;
-    height: 10px !important;
-    border: 1px solid gray !important;
-    pointer-events: none !important;
-    border-radius: 30px !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-    display: block !important;
-}
-.color-sampler-preview input {
-    position: absolute !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    background: white;
-    color: white;
-    font-weight: 500 !important;
-    border: none !important;
-    font-size: 12px !important;
-    height: 35px !important;
-    text-align: center !important;
-    -moz-appearance: none !important;
-    border-radius: 0 !important;
-    box-shadow: 0 !important;
-    display: block !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-    transition: none !important;
-    letter-spacing: 2px !important;
-    box-shadow: none !important;
-}*/
-#colorPickerUI.rightSideFardosPickerM {
+
+
+
+
+
+#ultimatePickerUI.verblikecolorPicker {
     position: fixed !important;
     top: 10px;
     right: 10px;
     width: 290px !important;
     height: auto !important;
     /*padding-bottom: 32px !important;*/
-    border-radius: 10px !important;
+    border-radius: 20px !important;
     background: white !important;
     border: 1px solid lightgrey !important;
     box-shadow: 0 0 1px 1px rgba(40, 52, 67, .07) !important;
     box-sizing: border-box !important;
-    font-family: 'Helvetica' !important;
+    font-family: 'Google Sans'sans-serif 'Helvetica' !important;
     user-select: none !important;
     cursor: pointer !important;
     z-index: 9999999999 !important;
-    padding-bottom: 22px;
+    font-family: 'Verdana', sans-serif;
+    width: 290px !important;
 }
-#colorPickerUI.rightSideFardosPickerM .closeButtns {
-    width: 35px !important;
-    height: 35px !important;
-    position: absolute !important;
-    top: 5px !important;
-    right: 5px !important;
-    border-radius: 30px !important;
-    text-align: center !important;
-    padding-top: 9px !important;
-    cursor: pointer !important;
-    transition: all .3s !important;
-    z-index: 9999999999 !important;
-    padding-left: 8px !important;
-    box-sizing: border-box !important
-}
-.fardosPickerHeader {
-    height: 43px !important;
-}
-#colorPickerUI .closeButtns svg {
-    text-align: center !important;
-    fill: #8492a6 !important;
-    display: block !important;
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeColorPickerItem {
     margin: 0 !important;
     padding: 0 !important;
-    overflow: hidden !important;
-    vertical-align: middle !important;
-    width: 18px !important;
-    height: 18px !important;
-    box-sizing: border-box !important;
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
+    list-style: none !important;
 }
-#colorPickerUI .closeButtns *, #colorPickerUI .fardoscolorBoxRemoveColor *{
-    cursor: pointer !important;
+
+#ultimatePickerUI.verblikecolorPicker .colorPicker {
+    padding-bottom: 22px !important;
+    margin: 20px !important;
+    border: 1px solid lightgrey !important;
+    box-shadow: 0 0 1px 1px #000 !important;
+    border-radius: 10px !important;
+    position: relative !important;
 }
-.rightSideTitleFP {
-    font-size: 16px !important;
-    font-weight: 900 !important;
-    padding-bottom: 10px !important;
-    padding-top: 5px !important;
-    padding-left: 10px !important;
-    display: inline-block !important;
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeColorPickerH1 {
     margin: 0 !important;
-    box-sizing: border-box !important;
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
-    margin-top: 2px !important;
-}
-.rightSideTitleFP img {
-    width: 20px !important;
-    float: left !important;
-    box-sizing: border-box !important;
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
-    margin-top: 5px !important;
-    margin-right: 10px !important;
-}
-.rightSideTitleFP span {
-    float: left !important;
-    margin: 0 !important;
-    margin-top: 7px !important;
-    box-sizing: content-box !important;
-    line-height: 1.1 !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
     color: black !important;
 }
-.rightSideChosenColorsFardos {
-    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
-    max-height: 150px !important;
-    min-height: 0 !important;
-    overflow-x: hidden !important;
-    overflow: -moz-scrollbars-none !important;
-    -ms-overflow-style: none !important;
-}
-.rightSideChosenColorsFardos ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin-bottom: 0 !important;
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
-    text-align: center !important;
-    outline: none !important;
-}
-.rightSideChosenColorsFardos ul li {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+
+#ultimatePickerUI.verblikecolorPicker .verblikecolorPickerHeader {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 40px !important;
+    flex: none !important;
+    padding: 0 10px !important;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
-    text-align: center !important;
-    outline: none !important;
 }
-#colorPickerUI .bottomBttnsSaveColorsF {
+
+#ultimatePickerUI.verblikecolorPicker .verblikecolorPickerHeader .verblikeColorPickerLogo img {
+    object-fit: cover !important;
+    height: 24px !important;
+    margin-right: 10px !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .verblikecolorPickerHeader svg {
+    fill: #8492a6 !important;
+    padding: 10px !important;
+    cursor: pointer !important;
+    padding-right: 0 !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .verblikeColorPickerLogo_wrapper {
+    display: flex !important;
+    align-items: center !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .verblikecolorPickerFooter {
     position: absolute !important;
     bottom: 0 !important;
     left: 0 !important;
     right: 0 !important;
-    padding: 5px 10px !important;
-    display: inline-block !important;
-    text-align: center !important;
+    height: 22px !important;
     background: #64db94 !important;
-    background: linear-gradient(-45deg, rgb(237, 118, 94), rgb(254, 168, 88)) !important;
+    background: linear-gradient(-45deg, #ed765e, #fea858) !important;
     font-size: 10px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    font-weight: 900 !important;
     color: white !important;
-    text-decoration: none !important;
     cursor: pointer !important;
     box-sizing: content-box !important;
     line-height: 1.2 !important;
     outline: none !important;
-    border-bottom-left-radius: 10px !important;
-    border-bottom-right-radius: 10px !important;
-}
-#colorPickerUI .bottomBttnsSaveColorsF.alternateAddvertise{
-    background: linear-gradient(-45deg, rgb(0 184 255), rgb(110 0 255)) !important;
-}
-.bottomBttnsSaveColorsF.settogo {
-    background: #1bd138 !important;
-}
-#colorPickerUI .colorBoxFardosPick {
-    width: 25px !important;
-    height: 25px !important;
-    border-radius: 4px !important;
-    background: orange;
-    box-shadow: 0 0 1px 1px rgba(40, 52, 67, .07) !important;
-    display: inline-block !important;
-    position: relative !important;
-    vertical-align: middle !important;
-    float: left !important;
-    margin-block-start: 0 !important;
-    margin-block-end: 0 !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
-    margin-top: 10px !important;
-    margin-left: 10px !important;
-    cursor: pointer !important;
-}
-.colorBoxFardosPick svg {
-    fill: white !important;
-}
-#colorPickerUI .fardoscolorHexCode,
-#colorPickerUI .fardoscolorRGBCode {
-    display: inline-block !important;
-    font-size: 12px !important;
-    font-weight: 900 !important;
-    letter-spacing: 0.5px !important;
-    cursor: pointer !important;
-    padding-top: 15px !important;
-    padding-bottom: 15px !important;
-    padding-left: 10px !important;
-    padding-right: 5px !important;
-    text-align: left !important;
-    color: #1F2667;
-    float: left;
-    box-sizing: content-box !important;
-    line-height: 1.3 !important;
-}
-.fardoscolorHexCode {
-    width: 55px !important;
-}
-.fardoscolorRGBCode {
-    /*width: 120px !important;*/
-}
-#colorPickerUI .fardoscolorBoxRemoveColor {
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    padding: 4px !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    transition: 0.3s all !important;
-    cursor: pointer !important;
-    background: #00000063;
-    border-radius: 4px !important;
-}
-#colorPickerUI .colorBoxFardosPick:hover .fardoscolorBoxRemoveColor {
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-.bottomFardosInjectStatus {
-    float: right !important;
-    text-align: right !important;
-    font-size: 11px !important;
-    font-weight: 400 !important;
-    letter-spacing: 0.3px !important;
-    position: absolute !important;
-    bottom: -20px !important;
-    right: 0 !important;
-    margin: 0 !important;
+    border-radius: 0 0 20px 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
+#ultimatePickerUI.verblikecolorPicker .verblikecolorPickerFooter a {
+    color: white !important;
+    cursor: pointer !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeRate {
+    text-align: center !important;
+    display: flex !important;
+    align-items: center !important;
+    text-transform: uppercase !important;
+    justify-content: center !important;
+    font-weight: 900 !important;
+    color: white !important;
+    text-decoration: none !important;
+    letter-spacing: 1px !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+#ultimatePickerUI.verblikecolorPicker.storage-rated-true .verblikecolorPickerFooter{
+    display: none !important;
+}
+#ultimatePickerUI.verblikecolorPicker.storage-rated-true .VerblikeColorPickerWrapppper{
+    padding-bottom: 0px !important;
+}
+
+
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeExit {
+    position: absolute !important;
+    right: 0 !important;
+    color: #000 !important;
+    top: 20px !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeColorPickerWrapppper .VerblikeColorPickerItem {
+    display: flex !important;
+    height: 45px !important;
+    align-items: center !important;
+    font-weight: bold !important;
+    padding: 0 10px !important;
+    justify-content: space-between !important;
+    font-size: 12px !important;
+    color: #1f2667 !important;
+}
+#ultimatePickerUI.verblikecolorPicker .VerblikeColorPickerWrapppper .VerblikecolorHexCode{
+    min-width: 80px !important;
+}
+#ultimatePickerUI.verblikecolorPicker .VerblikeColorPickerWrapppper .VerblikecolorRGBCode{
+    min-width: 150px !important;
+}
+
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeColorPickerWrapppper {
+    max-height: 150px !important;
+    overflow: scroll !important;
+    padding-bottom: 22px !important;
+
+}
+
+#ultimatePickerUI .VerblikeRemove {
+    width: 25px !important;
+    height: 25px !important;
+    border-radius: 100px !important;
+    box-shadow: 0 0 1px 1px #000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    transition: all ease 0.3s !important;
+    overflow: hidden !important;
+}
+
+#ultimatePickerUI .VerblikeRemove * {
+    cursor: pointer !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeRemove:hover {
+    background: #00000063 !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeRemove svg {
+    fill: white !important;
+    transition: all ease 0.3s !important;
+    opacity: 0 !important;
+}
+
+#ultimatePickerUI.verblikecolorPicker .VerblikeRemove:hover svg {
+    opacity: 1 !important;
+}

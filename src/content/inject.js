@@ -1,19 +1,20 @@
 if(!window.suppperI) firstInit()
-if(window.suppperI && !document.querySelectorAll('.color-sampler-preview').length) start()
+if(window.suppperI && !document.querySelectorAll('.color-bodier-preview').length) start()
 
 var a = {
 	ctx: false,
 	image: false,
-	scrollTop: $(document).scrollTop()
+	scrollTop: $(document).scrollTop(),
+	storage: {}
 }
 
 // injectCSS()
 // createElements()
 
 function createElements(){
-	$('.color-sampler-preview').remove()
+	$('.color-bodier-preview').remove()
 	$(`
-		<div style="z-index: 2147483647 !important; left: 614px; top: 2064px;" class="color-sampler-preview">
+		<div style="z-index: 2147483647 !important; left: 614px; top: 2064px;" class="color-bodier-preview">
 		<!-- <input type="text" style="background: rgb(99, 101, 210); color: rgb(0, 0, 0);"> -->
 		<table>
 			<tr> <td x="0" y="0" style="background-color: rgb(254, 255, 255);"></td><td x="1" y="0" style="background-color: rgb(254, 255, 255);"></td><td x="2" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="3" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="4" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="5" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="6" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="7" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="8" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="9" y="0" style="background-color: rgb(255, 255, 255);"></td><td x="10" y="0" style="background-color: rgb(255, 255, 255);"></td> </tr>
@@ -47,7 +48,10 @@ function firstInit(){
 	injectCSS()
 	escCatch()
 	start();
-	chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
+	chrome.storage.local.get(["rated"], function(items){
+		a.storage = items;
+	});
+	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 		a.canvas = document.createElement("canvas");
 		a.ctx = a.canvas.getContext("2d");
@@ -74,21 +78,21 @@ function firstInit(){
 function start(){
 	createElements()
   	mouseCatch()
-  	$(window).on('resize.colorPicker', reInit);
-	$(document).on('scroll.colorPicker', reInit);
+  	$(window).on('resize.ultimatePicker', reInit);
+	$(document).on('scroll.ultimatePicker', reInit);
 }
 var timeout;
 function reInit(){
 	clearTimeout(timeout)
 	timeout = setTimeout(function() {
-		chrome.extension.sendMessage({type: 'reInit'});
+		chrome.runtime.sendMessage({type: 'reInit'});
 	}, 300);
 }
 function stop(){
-	$('#colorPickerUI').remove()
-	$('.color-sampler-preview').remove()
+	$('#ultimatePickerUI').remove()
+	$('.color-bodier-preview').remove()
 	$('body').removeAttr('enableColorCursor')
-	$(document).off('mousemove.colorPicker').off('click.colorPicker').off('scroll.colorPicker').off('resize.colorPicker')
+	$(document).off('mousemove.ultimatePicker').off('click.ultimatePicker').off('scroll.ultimatePicker').off('resize.ultimatePicker')
 }
 
 function escCatch(){
@@ -100,43 +104,43 @@ function escCatch(){
 	});
 }
 function mouseCatch(ctx){
-	$(document).on('mousemove.colorPicker', function(e) {
+	$(document).on('mousemove.ultimatePicker', function(e) {
 		if(!a.ctx) return;
-		$('.color-sampler-preview').css({left: `${e.pageX}px`, top: `${e.pageY}px`});
+		$('.color-bodier-preview').css({left: `${e.pageX}px`, top: `${e.pageY}px`});
 		var rgba = []
 		var currentTd = 0
 		a.ctx.getImageData(e.pageX-5, e.pageY-a.scrollTop-5, 11, 11).data.forEach((e,n)=>{
 			var index = Math.floor(n/4);
 			if(index > currentTd) {
 				currentTd = index;
-				$('.color-sampler-preview table td').eq(currentTd-1).css('background-color', `rgba(${rgba.toString()})`)
+				$('.color-bodier-preview table td').eq(currentTd-1).css('background-color', `rgba(${rgba.toString()})`)
 				rgba = []
 			}
 			rgba.push(e)
 		})
 	})
-	$(document).on('click.colorPicker', function(event){
-		if($(event.target).closest('#colorPickerUI').length || $(event.target).hasClass('colorPickerUIommit')) return;
+	$(document).on('click.ultimatePicker', function(event){
+		if($(event.target).closest('#ultimatePickerUI').length || $(event.target).hasClass('ultimatePickerUIommit')) return;
 
-		if(!$('#colorPickerUI').length) buildUI()
+		if(!$('#ultimatePickerUI').length) buildUI()
 
-		// console.log('clicked', $(event.target).closest('#colorPickerUI').length, $(event.target))
-		var selectedColor = $(".color-sampler-preview > table tr:nth-child(6) > td:nth-child(6)").css('backgroundColor')
+		// console.log('clicked', $(event.target).closest('#ultimatePickerUI').length, $(event.target))
+		var selectedColor = $(".color-bodier-preview > table tr:nth-child(6) > td:nth-child(6)").css('backgroundColor')
+		
+		if($('#ultimatePickerUI .VerblikecolorRGBCode:contains("'+selectedColor.toUpperCase()+'")').length) return;
+		
 		$(`
-			<li>				
-				<div style="background:${selectedColor}" class="colorBoxFardosPick">					
-					<div class="fardoscolorBoxRemoveColor colorPickerUIommit">
-						<svg class="colorPickerUIommit" preserveAspectRatio="none" width="18" height="18" viewBox="0 0 24 24"><path class="colorPickerUIommit" d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
-					</div>
+				<div class="VerblikeColorPickerItem">
+					<div class="VerblikecolorHexCode">${rgb2hex(selectedColor).toUpperCase()}</div>
+					<div class="VerblikecolorRGBCode">${selectedColor.toUpperCase()}</div>
+			        <div class="VerblikeRemove" style="background:${selectedColor}">
+			          <svg  width="18" height="18" viewBox="0 0 24 24"><path class="" d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
+			        </div>
 				</div>
-				<div class="fardoscolorHexCode">${rgb2hex(selectedColor)}</div>
-				<div class="fardoscolorRGBCode">${selectedColor.toUpperCase()}</div>			
-				<br style="clear:both">
-			</li>			
-		`).prependTo('#fardosInjectColorsList ul')
-		.on('click', '.fardoscolorHexCode', copyColor)
-		.on('click', '.fardoscolorRGBCode', copyColor)
-		.on('click', '.fardoscolorBoxRemoveColor', function(){
+		`).prependTo('#ultimatePickerUI .VerblikeColorPickerWrapppper')
+		.on('click', '.VerblikecolorHexCode', copyColor)
+		.on('click', '.VerblikecolorRGBCode', copyColor)
+		.on('click', '.VerblikecolorBoxRemoveColor', function(){
 			$(this).closest('li').remove()
 		})
 		function copyColor(){
@@ -150,35 +154,67 @@ function mouseCatch(ctx){
 	})
 }
 
+
 function buildUI(){
+	
 	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
+	var advertise3 = `<div class="verblikecolorPickerFooter">
+			<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="rate">☆☆☆ Rate the Extension ☆☆☆</a>
+			<p class="VerblikeExit">Click escape to exit</p>
+      </div>`;
 	$(`
-		<div class="rightSideFardosPickerM" id="colorPickerUI">
-			<div class="fardosPickerHeader">	
-				<div id="stopAllButtonFardosInject" class="closeButtns">		
-					<svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>	
-				</div>	
-				<p class="rightSideTitleFP">
-					<img src="${chrome.extension.getURL("/icons/art-and-design.png")}"> 
-					<span>Chosen Colors</span>
-				</p>
+		<div class="verblikecolorPicker colorPicker ui-draggable ui-draggable-handle storage-rated-${a.storage.rated}" id="ultimatePickerUI">
+			<div class="verblikecolorPickerHeader">
+        <div class="verblikeColorPickerLogo_wrapper">
+				   <div class="verblikeColorPickerLogo">
+             <img src="${chrome.runtime.getURL("/icons/art-and-design.png")}"> 
+           </div>
+					<div class="VerblikeColorPickerH1">Chosen Colors</div>
+          </div>
+					<svg  width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
+			</div class="">
+
+
+			<div class="VerblikeColorPickerWrapppper">
+         		
 			</div>
-			<div id="fardosInjectColorsList" class="rightSideChosenColorsFardos">		
-				<ul>			
-				</ul>	
-			</div>	
-			${advertise1}
-			<p class="bottomFardosInjectStatus">Click escape to exit</p>	
-		</div>`).appendTo('body').find('#stopAllButtonFardosInject').on('click', stop)
-		
-		$( "#colorPickerUI" ).draggable();
+			${advertise3}
+		</div>`).appendTo('body').find('#stopAllButtonVerblikeInject').on('click', stop)
+		$( "#ultimatePickerUI .rate" ).on('click', ()=>chrome.storage.local.set({ "rated": true }))
+		$( "#ultimatePickerUI" ).draggable();
 
 			// ${(Math.random()<0.8)?advertise1:advertise2}
 
 }
 
+// function buildUI(){
+// 	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
+// 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
+// 	$(`
+// 		<div class="rightSideVerblikePickerM" id="ultimatePickerUI">
+// 			<div class="VerblikePickerHeader">	
+// 				<div id="stopAllButtonVerblikeInject" class="closeButtns">		
+// 					<svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>	
+// 				</div>	
+// 				<p class="rightSideTitleFP">
+// 					<img src="${chrome.runtime.getURL("/icons/art-and-design.png")}"> 
+// 					<span>Chosen Colors</span>
+// 				</p>
+// 			</div>
+// 			<div id="VerblikeInjectColorsList" class="rightSideChosenColorsVerblike">		
+// 				<ul>			
+// 				</ul>	
+// 			</div>	
+// 			${advertise1}
+// 			<p class="bottomVerblikeInjectStatus">Click escape to exit</p>	
+// 		</div>`).appendTo('body').find('#stopAllButtonVerblikeInject').on('click', stop)
+		
+// 		$( "#ultimatePickerUI" ).draggable();
 
+// 			// ${(Math.random()<0.8)?advertise1:advertise2}
+
+// }
 
 
 
@@ -189,7 +225,7 @@ function injectCSS(){
 	var link = document.createElement('link');
 	link.setAttribute('rel', 'stylesheet');
 	link.setAttribute('type', 'text/css');
-	link.setAttribute('href', chrome.extension.getURL("src/content/inject.css"));
+	link.setAttribute('href', chrome.runtime.getURL("src/content/inject.css"));
 	document.getElementsByTagName('head')[0].appendChild(link);
 }
 function loadJquery(){
@@ -229,14 +265,7 @@ function rgb2hex(rgb) {
 }
 
 function copyToClipboard(str){
-  chrome.extension.sendMessage({type: 'copy', text: str});
-  return;
-  const el = document.createElement('textarea');
-  el.value = str;
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
+	navigator.clipboard.writeText(str)
 };
 
 
