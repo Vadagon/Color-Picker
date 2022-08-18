@@ -32,7 +32,7 @@ function createElements(){
 		</div>
 	`).appendTo('body')
 
-	$('body').attr('enableColorCursor', '')
+	$('body').attr('enablecolorcursor', '')
 	// console.log($('a').eq(1).text())
 
 
@@ -91,7 +91,7 @@ function reInit(){
 function stop(){
 	$('#ultimatePickerUI').remove()
 	$('.color-bodier-preview').remove()
-	$('body').removeAttr('enableColorCursor')
+	$('body').removeAttr('enablecolorcursor')
 	$(document).off('mousemove.ultimatePicker').off('click.ultimatePicker').off('scroll.ultimatePicker').off('resize.ultimatePicker')
 }
 

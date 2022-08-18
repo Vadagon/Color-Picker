@@ -249,6 +249,9 @@ body[enableColorCursor] {
     height: 100% !important;
 }
 #ultimatePickerUI.verblikecolorPicker.storage-rated-true .verblikecolorPickerFooter{
+    background: none !important;
+}
+#ultimatePickerUI.verblikecolorPicker.storage-rated-true .verblikecolorPickerFooter a{
     display: none !important;
 }
 #ultimatePickerUI.verblikecolorPicker.storage-rated-true .VerblikeColorPickerWrapppper{
@@ -286,10 +289,11 @@ body[enableColorCursor] {
     max-height: 150px !important;
     overflow: scroll !important;
     padding-bottom: 22px !important;
-
+    overflow-x: hidden!important;
 }
 
 #ultimatePickerUI .VerblikeRemove {
+    flex: none !important;
     width: 25px !important;
     height: 25px !important;
     border-radius: 100px !important;
