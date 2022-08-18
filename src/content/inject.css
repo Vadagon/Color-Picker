@@ -201,7 +201,6 @@ body[enableColorCursor] {
 
 #ultimatePickerUI.verblikecolorPicker .verblikecolorPickerHeader svg {
     fill: #8492a6 !important;
-    padding: 10px !important;
     cursor: pointer !important;
     padding-right: 0 !important;
 }

@@ -48,9 +48,6 @@ function firstInit(){
 	injectCSS()
 	escCatch()
 	start();
-	chrome.storage.local.get(["rated"], function(items){
-		a.storage = items;
-	});
 	chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 
 		a.canvas = document.createElement("canvas");
@@ -76,6 +73,9 @@ function firstInit(){
 }
 
 function start(){
+	chrome.storage.local.get(["rated"], function(items){
+		a.storage = items;
+	});
 	createElements()
   	mouseCatch()
   	$(window).on('resize.ultimatePicker', reInit);
@@ -120,6 +120,7 @@ function mouseCatch(ctx){
 		})
 	})
 	$(document).on('click.ultimatePicker', function(event){
+		console.log($(event.target).closest('#ultimatePickerUI'));
 		if($(event.target).closest('#ultimatePickerUI').length || $(event.target).hasClass('ultimatePickerUIommit')) return;
 
 		if(!$('#ultimatePickerUI').length) buildUI()
@@ -140,8 +141,10 @@ function mouseCatch(ctx){
 		`).prependTo('#ultimatePickerUI .VerblikeColorPickerWrapppper')
 		.on('click', '.VerblikecolorHexCode', copyColor)
 		.on('click', '.VerblikecolorRGBCode', copyColor)
-		.on('click', '.VerblikecolorBoxRemoveColor', function(){
-			$(this).closest('li').remove()
+		.on('click', '.VerblikeRemove', function(){
+			console.log(213)
+			console.log($(this), $(this).closest('div.VerblikeColorPickerItem'))
+			setTimeout(()=>$(this).parent('div.VerblikeColorPickerItem').remove(), 1)
 		})
 		function copyColor(){
 			var txt = $(this).text()
@@ -156,7 +159,7 @@ function mouseCatch(ctx){
 
 
 function buildUI(){
-	
+	console.log(a.storage)
 	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
 	var advertise3 = `<div class="verblikecolorPickerFooter">
@@ -172,7 +175,7 @@ function buildUI(){
            </div>
 					<div class="VerblikeColorPickerH1">Chosen Colors</div>
           </div>
-					<svg  width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
+					<svg  id="stopAllButtonVerblikeInject" width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
 			</div class="">
 
 
