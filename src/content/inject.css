@@ -1,9 +1,9 @@
-body[enablecolorcursor=true] * {
+html[enablecolorcursorverblike=true] *, body[enablecolorcursorverblike=true] * {
     cursor: crosshair !important;
     pointer-events: none !important;
 }
 
-body[enablecolorcursor=true] {
+html[enablecolorcursorverblike=true], body[enablecolorcursorverblike=true] {
     cursor: crosshair !important;
 }
 
