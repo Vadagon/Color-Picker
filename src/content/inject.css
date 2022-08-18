@@ -254,6 +254,7 @@ body[enablecolorcursor=true] {
 #ultimatePickerUI.verblikecolorPicker.storage-rated-true .verblikecolorPickerFooter{
     background: none !important;
     pointer-events: none !important;
+    z-index: -1;
 }
 #ultimatePickerUI.verblikecolorPicker.storage-rated-true .verblikecolorPickerFooter a{
     display: none !important;
