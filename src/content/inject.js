@@ -32,7 +32,7 @@ function createElements(){
 		</div>
 	`).appendTo('body')
 
-	$('body').attr('enablecolorcursor', '')
+	$('body').attr('enablecolorcursor', 'true')
 	// console.log($('a').eq(1).text())
 
 
@@ -91,6 +91,7 @@ function reInit(){
 function stop(){
 	$('#ultimatePickerUI').remove()
 	$('.color-bodier-preview').remove()
+	$('body').attr('enablecolorcursor', 'false')
 	$('body').removeAttr('enablecolorcursor')
 	$(document).off('mousemove.ultimatePicker').off('click.ultimatePicker').off('scroll.ultimatePicker').off('resize.ultimatePicker')
 }
@@ -148,6 +149,7 @@ function mouseCatch(ctx){
 		})
 		function copyColor(){
 			var txt = $(this).text()
+			if(txt == 'Copied!') return;
 			$(this).text('Copied!').css('color', '#fc3466')
 			setTimeout(()=>{
 				$(this).text(txt).css('color', '#1f2667')

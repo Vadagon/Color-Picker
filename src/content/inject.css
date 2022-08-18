@@ -1,9 +1,9 @@
-body[enableColorCursor] * {
+body[enablecolorcursor=true] * {
     cursor: crosshair !important;
     pointer-events: none !important;
 }
 
-body[enableColorCursor] {
+body[enablecolorcursor=true] {
     cursor: crosshair !important;
 }
 
