@@ -204,6 +204,9 @@ body[enableColorCursor] {
     cursor: pointer !important;
     padding-right: 0 !important;
 }
+#ultimatePickerUI.verblikecolorPicker .verblikecolorPickerHeader svg path{
+    cursor: pointer !important;
+}
 
 #ultimatePickerUI.verblikecolorPicker .verblikeColorPickerLogo_wrapper {
     display: flex !important;
