@@ -2,7 +2,7 @@
   "name": "__MSG_app_name__",
   "description": "__MSG_app_description__",
   "default_locale": "en",
-  "version": "15",
+  "version": "18",
   "manifest_version": 3,
   "icons": {
     "128": "icons/art-and-design.png"
@@ -26,8 +26,7 @@
   "commands": {
     "_execute_action": {
         "suggested_key": {
-            "windows": "Alt+Shift+C",
-            "mac": "Alt+Shift+C"
+          "default": "Alt+Shift+C"
         }
     }
   }

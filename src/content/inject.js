@@ -73,13 +73,12 @@ function firstInit(){
 }
 
 function start(){
-	chrome.storage.local.get(["rated"], function(items){
-		a.storage = items;
-	});
+	// chrome.storage.local.get(["rated"], function(items){
+	// 	a.storage = items;
+	// });
 	createElements()
   	mouseCatch()
-  	$(window).on('resize.ultimatePicker', reInit);
-	$(document).on('scroll.ultimatePicker', reInit);
+  	$(document).on('resize.ultimatePicker', reInit).on('scroll.ultimatePicker', reInit);
 }
 var timeout;
 function reInit(){
@@ -93,7 +92,7 @@ function stop(){
 	$('.color-bodier-preview').remove()
 	$('body, html').attr('enablecolorcursorverblike', 'false')
 	$('body, html').removeAttr('enablecolorcursorverblike')
-	$(document).off('mousemove.ultimatePicker').off('click.ultimatePicker').off('scroll.ultimatePicker').off('resize.ultimatePicker')
+	$(document, window).off('mousemove.ultimatePicker').off('click.ultimatePicker').off('scroll.ultimatePicker').off('resize.ultimatePicker')
 }
 
 function escCatch(){
@@ -129,7 +128,7 @@ function mouseCatch(ctx){
 		// console.log('clicked', $(event.target).closest('#ultimatePickerUI').length, $(event.target))
 		var selectedColor = $(".color-bodier-preview > table tr:nth-child(6) > td:nth-child(6)").css('backgroundColor')
 		
-		if($('#ultimatePickerUI .VerblikecolorRGBCode:contains("'+selectedColor.toUpperCase()+'")').length) return;
+		$('#ultimatePickerUI .VerblikecolorRGBCode:contains("'+selectedColor.toUpperCase()+'")').parent().remove()
 		
 		$(`
 				<div class="VerblikeColorPickerItem">
@@ -161,7 +160,6 @@ function mouseCatch(ctx){
 
 
 function buildUI(){
-	console.log(a.storage)
 	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
 	var advertise3 = `<div class="verblikecolorPickerFooter">
