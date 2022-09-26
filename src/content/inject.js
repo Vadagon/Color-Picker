@@ -131,12 +131,15 @@ function mouseCatch(ctx){
 		$('#ultimatePickerUI .VerblikecolorRGBCode:contains("'+selectedColor.toUpperCase()+'")').parent().remove()
 		
 		$(`
-				<div class="VerblikeColorPickerItem">
-					<div class="VerblikecolorHexCode">${rgb2hex(selectedColor).toUpperCase()}</div>
-					<div class="VerblikecolorRGBCode">${selectedColor.toUpperCase()}</div>
-			        <div class="VerblikeRemove" style="background:${selectedColor}">
-			          <svg  width="18" height="18" viewBox="0 0 24 24"><path class="" d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
-			        </div>
+		
+					<div class="item_li_verblike">
+					<div class="color_verblike" style="background:#e8ffff"></div>
+						<div class="hex_verblike">${rgb2hex(selectedColor).toUpperCase()}</div>
+						<div class="rgb_verblike">${selectedColor.toUpperCase()}</div>
+					<div class="remove_verblike">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAABnUlEQVRIic3Vv2tUQRAH8I8i2ng57kptRNHOSmzS2ViJIAS1139A0trZifE/0CaiIBLEKlXyBygmhZ0WBgxWxnjRIoV3Fm9Wl8ee2RdFHBh2dn59Z+Yt8/iP6DpWgq/+7eSXMcFrrIV86U+T9nEy+AU+4DTOYDN0yd7vkvgInmAcldbwGI9xuJ3sUAHgFq7hDt5UFnUWt7GOu7nhQFb18ZAfYIgrlckTPccn3Ij7JnaTcVH9OGp5Me/gBM6HPI9jcXahe/iIhbi/xPuS40NshDyD++jFfS64ZNuI2D1pATshz2ravRj31WChm4QPjLLqf9LBAsAWjmqeXAKaKfiltz8K357mI+8J8DnOQQRPA0i6Ufjmsb8F2Ipz2AFg2IqtAkgdTJRXQT9sO10BUptDfMc3v15KTj18DZ99jSgFjUwfURrhvjtIANNG1Aao6mBbsx27dDCImC9tp9I2TY6pqiXNx4TlzG81kwcRMy7kK9I7sawq6RHelgylDmhmeQFPg5+Ffk75fzyrWXTVAEu4iXN4lelPha5NuxHz7+kH3FGA4cZZlpYAAAAASUVORK5CYII=">
+        </div>
+			        
 				</div>
 		`).prependTo('#ultimatePickerUI .VerblikeColorPickerWrapppper')
 		.on('click', '.VerblikecolorHexCode', copyColor)
@@ -179,8 +182,10 @@ function buildUI(){
 			</div class="">
 
 
-			<div class="VerblikeColorPickerWrapppper">
+			<div  class="wrapper_verblike">
+			<div class="ul_verblike"><div class="VerblikeColorPickerWrapppper">
          		
+			</div>
 			</div>
 			${advertise3}
 		</div>`).appendTo('body').find('#stopAllButtonVerblikeInject').on('click', stop)

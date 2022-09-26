@@ -328,3 +328,167 @@ html[enablecolorcursorverblike=true], body[enablecolorcursorverblike=true] {
 #ultimatePickerUI.verblikecolorPicker .VerblikeRemove:hover svg {
     opacity: 1 !important;
 }
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700&display=swap');
+.ul_verblike,.li_verblike{
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.colorPicker_verblike{
+  font-family: 'Noto Sans', sans-serif !important;
+  padding: 0 3px !important;
+padding-bottom: 22px !important;
+padding-top: 28px !important;
+margin: 20px !important;
+box-shadow: 0 0 1px 1px rgb(40 52 67 / 7%) !important;
+border-radius: 10px 10px 0 0 !important;
+position: relative !important;
+background-color: rgb(8, 49, 217) !important;
+}
+.color_verblike{
+  width: 15px !important;
+  height: 15px !important;
+  border-top: 1px solid rgb(128, 128, 128) !important;
+border-left: 1px solid rgb(128, 128, 128) !important;
+border-right: 1px solid  rgb(192, 192, 192) !important;
+border-bottom: 1px solid  rgb(192, 192, 192) !important;
+}
+.h1_verblike{
+  margin: 0 !important;
+  line-height: 25px !important;
+    font-weight: 700 !important;
+    font-size: 12px !important;
+    font-family: "Noto Sans" !important;
+    text-shadow: rgb(0 0 0) 1px 1px !important;
+    color: white !important;
+}
+.header_verblike{
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  flex: none !important;
+  padding: 0 10px !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%) !important;
+height: 28px !important;
+  border-top-left-radius: 8px !important;
+border-top-right-radius: 8px !important;
+overflow: hidden !important;
+position: absolute !important;
+width: 100% !important;
+left: 0 !important;
+top: 0 !important;
+right: 0 !important;
+box-sizing: border-box !important;
+}
+.header_verblike .logo_verblike .logo_verblike_img{
+  object-fit: cover !important;
+height: 24px !important;
+margin-right: 10px !important;
+pointer-events: none !important;
+width: 15px !important;
+height: 15px !important;
+margin-left: 1px !important;
+margin-right: 3px !important;
+}
+
+.header_verblike .close_verblike {
+  border: 1px solid rgb(255, 255, 255) !important;
+margin-right: 1px !important;
+position: relative !important;
+width: 22px !important;
+height: 22px !important;
+border: 1px solid rgb(255, 255, 255) !important;
+border-radius: 3px !important;
+flex: none !important;
+fill:#fff !important;
+cursor: pointer !important;
+box-shadow: rgb(218 70 0) 0px -1px 2px 1px inset !important;
+background-image: radial-gradient(circle at 90% 90%, rgb(204, 70, 0) 0%, rgb(220, 101, 39) 55%, rgb(205, 117, 70) 70%, rgb(255, 204, 178) 90%, white 100%) !important;
+}
+.logo_wrapper_verblike{
+  display: flex !important;
+  align-items: center !important;
+}
+
+
+.footer_verblike{
+  position: absolute  !important;
+bottom: 0  !important;
+left: 0  !important;
+right: 0  !important;
+height: 22px !important;
+font-size: 10px  !important;
+color: white  !important;
+cursor: pointer  !important;
+box-sizing: content-box  !important;
+line-height: 1.2  !important;
+outline: none  !important;
+margin: 0 3px !important;
+margin-bottom: 3px !important;
+display: flex !important;
+align-items: center !important;
+justify-content: center !important;
+border-top: 1px solid transparent !important;
+    box-shadow: rgb(50 50 50 / 80%) 0px 1px 3px inset !important;
+    background-color: rgb(236, 233, 216) !important;
+}
+.rate_verblike{
+  text-align: center  !important;
+  display: flex !important;
+  align-items: center !important;
+  text-transform: uppercase  !important;
+  justify-content: center !important;
+  font-weight: 900  !important;
+  color: white !important;
+  text-decoration: none !important;
+  letter-spacing: 1px  !important;
+      font-family: Noto Sans TC,sans-serif !important;
+      color: #000 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.exit_verblike{
+  position: absolute !important;
+right: 0 !important;
+color: #000 !important;
+top: 20px !important;
+}
+.wrapper_verblike{
+  overflow: hidden !important;
+overflow-y: auto !important;
+max-height: 250px !important;
+}
+.wrapper_verblike .item_li_verblike{
+  display: flex !important;
+height: 45px !important;
+align-items: center !important;
+font-weight: bold !important;
+padding: 0 10px !important;
+justify-content:  space-between !important;
+font-size: 12px !important;
+color: #1F2667 !important;
+background: white !important;
+}
+
+
+.remove_verblike{
+  width: 25px !important;
+  height: 25px !important;
+  display: flex !important;align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: all ease 0.3s !important;
+}
+
+.remove_verblike svg{
+  fill:black !important;
+  transition: all ease 0.3s !important;
+  opacity: .5 !important;
+}
+.remove_verblike:hover svg{
+  opacity: 1 !important;
+}
