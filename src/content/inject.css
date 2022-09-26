@@ -462,6 +462,7 @@ border-top: 1px solid transparent !important;
 right: 0 !important;
 color: #000 !important;
 top: 30px !important;
+margin: 0 !important;
 }
 .wrapper_verblike{
   overflow: hidden !important;
