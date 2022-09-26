@@ -2,7 +2,7 @@
   "name": "__MSG_app_name__",
   "description": "__MSG_app_description__",
   "default_locale": "en",
-  "version": "20",
+  "version": "21",
   "manifest_version": 3,
   "icons": {
     "128": "icons/paint-icon.png"
