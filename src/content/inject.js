@@ -128,12 +128,12 @@ function mouseCatch(ctx){
 		// console.log('clicked', $(event.target).closest('#ultimatePickerUI').length, $(event.target))
 		var selectedColor = $(".color-bodier-preview > table tr:nth-child(6) > td:nth-child(6)").css('backgroundColor')
 		
-		$('#ultimatePickerUI .VerblikecolorRGBCode:contains("'+selectedColor.toUpperCase()+'")').parent().remove()
+		$('#ultimatePickerUI .rgb_verblike:contains("'+selectedColor.toUpperCase()+'")').parent().remove()
 		
 		$(`
 		
 					<div class="item_li_verblike">
-					<div class="color_verblike" style="background:#e8ffff"></div>
+					<div class="color_verblike" style="background:${rgb2hex(selectedColor).toUpperCase()}"></div>
 						<div class="hex_verblike">${rgb2hex(selectedColor).toUpperCase()}</div>
 						<div class="rgb_verblike">${selectedColor.toUpperCase()}</div>
 					<div class="remove_verblike">
@@ -141,13 +141,13 @@ function mouseCatch(ctx){
         </div>
 			        
 				</div>
-		`).prependTo('#ultimatePickerUI .VerblikeColorPickerWrapppper')
-		.on('click', '.VerblikecolorHexCode', copyColor)
-		.on('click', '.VerblikecolorRGBCode', copyColor)
-		.on('click', '.VerblikeRemove', function(){
+		`).prependTo('#ultimatePickerUI .wrapper_verblike')
+		.on('click', '.hex_verblike', copyColor)
+		.on('click', '.rgb_verblike', copyColor)
+		.on('click', '.remove_verblike', function(){
 			console.log(213)
-			console.log($(this), $(this).closest('div.VerblikeColorPickerItem'))
-			setTimeout(()=>$(this).parent('div.VerblikeColorPickerItem').remove(), 1)
+			console.log($(this), $(this).closest('div.item_li_verblike'))
+			setTimeout(()=>$(this).parent('div.item_li_verblike').remove(), 1)
 		})
 		function copyColor(){
 			var txt = $(this).text()
@@ -165,30 +165,44 @@ function mouseCatch(ctx){
 function buildUI(){
 	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
-	var advertise3 = `<div class="verblikecolorPickerFooter">
-			<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="rate">☆☆☆ Rate the Extension ☆☆☆</a>
-			<p class="VerblikeExit">Click escape to exit</p>
-      </div>`;
+	var advertise3 = `
+	<div class="footer_verblike">
+	<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="rate_verblike">☆☆☆ Rate the Extension ☆☆☆</a>
+	<p class="exit_verblike">Click escape to exit</p>
+</div>
+</div>
+	`;
+	
 	$(`
 		<div class="verblikecolorPicker colorPicker ui-draggable ui-draggable-handle storage-rated-${a.storage.rated}" id="ultimatePickerUI">
-			<div class="verblikecolorPickerHeader">
-        <div class="verblikeColorPickerLogo_wrapper">
-				   <div class="verblikeColorPickerLogo">
-             <img src="${chrome.runtime.getURL("/icons/art-and-design.png")}"> 
-           </div>
-					<div class="VerblikeColorPickerH1">Chosen Colors</div>
-          </div>
-					<svg  id="stopAllButtonVerblikeInject" width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
-			</div class="">
+			
+        			<div class="header_verblike">
+      					<div class="logo_wrapper_verblike">
+	  						<div class="logo_verblike">
+								<svg class="logo_verblike_img" xmlns="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny-ps" viewBox="0 0 80 78" width="80" height="80">
+										<defs>
+										<image width="80" height="78" id="img1" href="data:image/png;base64,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"></image>
+										</defs>
+
+										<use id="Background" href="#img1" x="0" y="0"></use>
+									</svg>
+	  						</div>
+		   					<div class="h1_verblike">Chosen Colors</div>
+	  
+	  					</div>
+		  					<svg class="close_verblike"  width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
+		  				</div>
 
 
-			<div  class="wrapper_verblike">
-			<div class="ul_verblike"><div class="VerblikeColorPickerWrapppper">
+			<div class="wrapper_verblike">
+			<div class="ul_verblike">
+				<div class="VerblikeColorPickerWrapppper">
          		
+				</div>
 			</div>
 			</div>
 			${advertise3}
-		</div>`).appendTo('body').find('#stopAllButtonVerblikeInject').on('click', stop)
+		</div>`).appendTo('body').find('.close_verblike').on('click', stop)
 		$( "#ultimatePickerUI .rate" ).on('click', ()=>chrome.storage.local.set({ "rated": true }))
 		$( "#ultimatePickerUI" ).draggable();
 
