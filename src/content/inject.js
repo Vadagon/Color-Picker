@@ -167,7 +167,7 @@ function buildUI(){
 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
 	var advertise3 = `
 	<div class="footer_verblike">
-	<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="rate_verblike">☆☆☆ Rate the Extension ☆☆☆</a>
+	<a href="https://chrome.google.com/webstore/detail/ultimate-color-picker/jbngkbpfcplopniblkndojcmplnjonhm?hl=en&authuser=0" target="_blank" class="rate_verblike">☆☆☆ Rate the Extension ☆☆☆</a>
 	<p class="exit_verblike">Click escape to exit</p>
 </div>
 </div>
