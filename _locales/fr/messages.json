@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Outil Pipette Couleur"
+        "message": "Choix de couleur X"
     },
     "app_description": {
-        "message": "Obtenez les couleurs d'une page avec une pipette."
+        "message": "Obtenez la couleur d'une page avec l'outil pipette en un clic"
     }
 }

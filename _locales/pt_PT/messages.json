@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Ferramenta conta-gotas coloridas"
+        "message": "Escolha de cor X"
     },
     "app_description": {
-        "message": "Obtenha cores de uma página com conta-gotas."
+        "message": "Obtenha cor de uma página com a ferramenta conta-gotas em um clique"
     }
 }

@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Farbpipette-Werkzeug"
+        "message": "Farbauswahl X"
     },
     "app_description": {
-        "message": "Holen Sie sich mit der Pipette Farben von einer Seite."
+        "message": "Holen Sie sich mit einem Klick Farbe von einer Seite mit dem Pipettenwerkzeug"
     }
 }

@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Farve pipetteværktøj"
+        "message": "Farvevalg X"
     },
     "app_description": {
-        "message": "Få farver fra en side med pipette."
+        "message": "Få farve fra en side med pipetteværktøj med et klik"
     }
 }

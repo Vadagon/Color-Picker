@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Kroplomierz kolorów"
+        "message": "Wybór koloru X"
     },
     "app_description": {
-        "message": "Uzyskaj kolory ze strony za pomocą zakraplacza."
+        "message": "Uzyskaj kolor ze strony za pomocą kroplomierza jednym kliknięciem"
     }
 }

@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Alat za kapaljku u boji"
+        "message": "Odabir boje X"
     },
     "app_description": {
-        "message": "Dobijte boje sa stranice pomoću kapaljke."
+        "message": "Dobijte boju sa stranice pomoću alata za kapaljku jednim klikom"
     }
 }

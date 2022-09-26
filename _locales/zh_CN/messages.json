@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "彩色吸管工具"
+        "message": "颜色选择 X"
     },
     "app_description": {
-        "message": "使用吸管从页面中获取颜色。"
+        "message": "使用吸管工具从页面中单击获取颜色"
     }
 }

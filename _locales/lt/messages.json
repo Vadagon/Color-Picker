@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Spalvotas Eyedropper įrankis"
+        "message": "Spalvos pasirinkimas X"
     },
     "app_description": {
-        "message": "Gaukite spalvas iš puslapio naudodami lašintuvą."
+        "message": "Gaukite spalvų iš puslapio naudodami lašintuvo įrankį vienu paspaudimu"
     }
 }

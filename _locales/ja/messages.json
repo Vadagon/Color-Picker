@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "カラースポイトツール"
+        "message": "カラーピックX"
     },
     "app_description": {
-        "message": "スポイトでページから色を取得します。"
+        "message": "クリックでスポイト ツールを使用してページから色を取得します"
     }
 }

@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Renkli Damlalık Aracı"
+        "message": "Renk Seçimi X"
     },
     "app_description": {
-        "message": "Damlalıklı bir sayfadan renkleri alın."
+        "message": "Damlalık aracıyla bir sayfadan tek tıklamayla renk alın"
     }
 }

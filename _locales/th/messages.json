@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "เครื่องมือ Eyedropper สี"
+        "message": "เลือกสี X"
     },
     "app_description": {
-        "message": "รับสีจากหน้าด้วย eyedropper"
+        "message": "รับสีจากหน้าด้วยเครื่องมือ eyedropper ในคลิกเดียว"
     }
 }

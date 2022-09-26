@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "የቀለም Eyedropper መሣሪያ"
+        "message": "ቀለም ይምረጡ X"
     },
     "app_description": {
-        "message": "ከዓይን ጠባይ ጋር ቀለሞችን ያግኙ።"
+        "message": "በአንድ ጠቅታ ውስጥ ከዓይን ቆጣቢ መሳሪያ ጋር ከገጽ ቀለም ያግኙ"
     }
 }

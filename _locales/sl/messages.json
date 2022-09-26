@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Barvno orodje za kapalko"
+        "message": "Izbira barve X"
     },
     "app_description": {
-        "message": "Pridobite barve s strani s kapalko."
+        "message": "Pridobite barvo s strani z orodjem za kapalko z enim klikom"
     }
 }

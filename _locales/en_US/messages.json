@@ -1,10 +1,8 @@
 {
-    "app_name":
-    {
-        "message": "Ultimate Color Picker"
+    "app_name": {
+        "message": "Eye Dropper X"
     },
-    "app_description":
-    {
-        "message": "Quickly pick HEX, RGB colors from a page with lightweight eyedropper tool"
+    "app_description": {
+        "message": "Get color from a page with color pick tool in a click"
     }
 }

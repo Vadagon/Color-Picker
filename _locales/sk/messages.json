@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Nástroj Color Eyedropper Tool"
+        "message": "Výber farby X"
     },
     "app_description": {
-        "message": "Získajte farby zo stránky pomocou kvapkadla."
+        "message": "Získajte farbu zo stránky pomocou nástroja kvapkadlo jediným kliknutím"
     }
 }

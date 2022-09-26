@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Công cụ kẻ mắt màu"
+        "message": "Chọn màu X"
     },
     "app_description": {
-        "message": "Lấy màu từ một trang bằng thuốc nhỏ mắt."
+        "message": "Lấy màu từ một trang bằng công cụ kẻ mắt trong một cú nhấp chuột"
     }
 }

@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Värillinen pipettityökalu"
+        "message": "Värivalinta X"
     },
     "app_description": {
-        "message": "Hanki värit sivulta pipetillä."
+        "message": "Saat väriä sivulta pipettityökalulla yhdellä napsautuksella"
     }
 }

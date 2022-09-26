@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Strumento contagocce a colori"
+        "message": "Colore Scegli X"
     },
     "app_description": {
-        "message": "Ottieni colori da una pagina con il contagocce."
+        "message": "Ottieni il colore da una pagina con lo strumento contagocce in un clic"
     }
 }

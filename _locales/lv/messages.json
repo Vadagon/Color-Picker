@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Krāsu pilinātāja rīks"
+        "message": "Krāsu izvēle X"
     },
     "app_description": {
-        "message": "Iegūstiet krāsas no lapas ar pilinātāju."
+        "message": "Iegūstiet krāsu no lapas ar pilinātāja rīku ar vienu klikšķi"
     }
 }

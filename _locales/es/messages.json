@@ -1,8 +1,8 @@
 {
     "app_name": {
-        "message": "Herramienta Cuentagotas de color"
+        "message": "Selección de color X"
     },
     "app_description": {
-        "message": "Obtén colores de una página con cuentagotas."
+        "message": "Obtenga color de una página con la herramienta cuentagotas en un clic"
     }
 }
