@@ -187,7 +187,7 @@ function buildUI(){
 										<use id="Background" href="#img1" x="0" y="0"></use>
 									</svg>
 	  						</div>
-		   					<div class="h1_verblike">Chosen Colors</div>
+		   					<div class="h1_verblike">Eye Dropper X</div>
 	  
 	  					</div>
 		  					<svg class="close_verblike"  width="18" height="18" viewBox="0 0 24 24"><path d="M14.8284 12l4.2427 4.2426c.781.781.781 2.0474 0 2.8285-.781.781-2.0474.781-2.8285 0L12 14.8284l-4.2426 4.2427c-.781.781-2.0474.781-2.8285 0-.781-.781-.781-2.0474 0-2.8285L9.1716 12 4.9289 7.7574c-.781-.781-.781-2.0474 0-2.8285.781-.781 2.0474-.781 2.8285 0L12 9.1716l4.2426-4.2427c.781-.781 2.0474-.781 2.8285 0 .781.781.781 2.0474 0 2.8285L14.8284 12z" fillrule="evenodd"></path></svg>
