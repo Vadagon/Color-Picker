@@ -160,10 +160,10 @@ function mouseCatch(ctx){
 
 
 function buildUI(){
-	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
+	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/ultimate-color-picker/lobiadjfmkomemokdfhiaaaidgdhcded/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
 	var advertise3 = `<div class="verblikecolorPickerFooter">
-			<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="rate">☆☆☆ Rate the Extension ☆☆☆</a>
+			<a href="https://chrome.google.com/webstore/detail/ultimate-color-picker/lobiadjfmkomemokdfhiaaaidgdhcded/reviews" target="_blank" class="rate">☆☆☆ Rate the Extension ☆☆☆</a>
 			<p class="VerblikeExit">Click escape to exit</p>
       </div>`;
 	$(`
@@ -192,7 +192,7 @@ function buildUI(){
 }
 
 // function buildUI(){
-// 	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/color-picker/clkoagfbjkilljcajbbielofkeokbhma/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
+// 	var advertise1 = `<a href="https://chrome.google.com/webstore/detail/ultimate-color-picker/lobiadjfmkomemokdfhiaaaidgdhcded/reviews" target="_blank" class="bottomBttnsSaveColorsF">☆☆☆ Rate the Extension ☆☆☆</a>`
 // 	var advertise2 = `<a href="https://bit.ly/3ceYEy4" target="_blank" class="bottomBttnsSaveColorsF alternateAddvertise">Remove inactive Facebook™ friends</a>`
 // 	$(`
 // 		<div class="rightSideVerblikePickerM" id="ultimatePickerUI">
